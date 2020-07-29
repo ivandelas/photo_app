@@ -30,6 +30,9 @@ gem 'jbuilder', '~> 2.5'
 # bootstrap frontend framework
 gem 'bootstrap', '~> 4.5.0'
 gem 'jquery-rails'
+# devise authentication framework
+gem 'devise'
+gem 'devise-bootstrap-views', '~> 1.0'
 
 
 # Use Capistrano for deployment
