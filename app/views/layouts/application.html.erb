@@ -12,9 +12,16 @@
     <%= render 'layouts/navigation' %>
     <div class="container my-5">
       <div class="row">
-        <main class="col-md-8">
-          <%= yield %>
-        </main>
+        <div class="col-md-8">
+          <div class="px-5">
+            <div id="messages">
+              <%= render 'layouts/messages' %>
+            </div>
+            <main>
+              <%= yield %>
+            </main>
+          </div>
+        </div>
         <aside class="col-md-4 border shadow p-4">
           <%= render 'layouts/sidebar' %>
         </aside>
