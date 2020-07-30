@@ -12,7 +12,7 @@ $(document).on('turbolinks:load', function() {
     return false;
   }
   function stripeResponseHandler(status, response) {
-    let toekn, $form;
+    let token, $form;
     $form = $('.cc_form');
     if (response.error) {
       console.error(response.error.message);
@@ -21,7 +21,7 @@ $(document).on('turbolinks:load', function() {
       token = response.id;
       $form.append($('<input type="hidden" name="payment[token]">')).val(token);
       $('[data-stripe=number]').remove();
-      $('[data-stripe=cvv]').remove();
+      $('[data-stripe=cvc]').remove();
       $('[data-stripe=exp-year]').remove();
       $('[data-stripe=exp-month').remove();
       $form.get(0).submit();
