@@ -1,9 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>PhotoApp</title>
+    <title>Photo App</title>
     <%= csrf_meta_tags %>
 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -12,8 +14,8 @@
     <%= render 'layouts/navigation' %>
     <div class="container my-5">
       <div class="row">
-        <div class="col-lg-8">
-          <div class="px-5">
+        <div class="col-lg-8 px-lg-5">
+          <div>
             <div id="messages">
               <%= render 'layouts/messages' %>
             </div>
