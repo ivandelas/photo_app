@@ -30,7 +30,6 @@ module ApplicationHelper
     else
       %{
         #{button_to 'Login', new_user_session_path, method: :get, form_class: 'form-inline my-2 my-lg-0 mr-lg-2', class: 'btn btn-sm btn-success'}
-        #{button_to 'Sign up', new_user_registration_path, method: :get, form_class: 'form-inline my-2 my-lg-0', class: 'btn btn-sm btn-primary'}
       }.html_safe
     end
   end
