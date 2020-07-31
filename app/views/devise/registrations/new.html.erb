@@ -26,27 +26,6 @@
     <%= f.password_field :password_confirmation, autocomplete: 'current-password', class: 'form-control' %>
   </div>
 
-  <%= fields_for(:payment) do |p| %>
-    <div class="form-row align-items-end">
-      <div class="form-group col-md-4">
-        <%= p.label :card_number, 'Card number', data: { stripe: 'label' } %>
-        <%= p.text_field :card_number, class: 'form-control', required: true, data: { stripe: 'number' } %>
-      </div>
-      <div class="form-group col-md-2">
-        <%= p.label :card_cvc, 'Card cvc', data: { stripe: 'label' } %>
-        <%= p.text_field :card_cvc, class: 'form-control', required: true, data: { stripe: 'cvc' } %>
-      </div>
-      <div class="form-group col-md-3">
-        <%= p.label :card_expiry_month, 'Card expiry month', data: { stripe: 'label' } %>
-        <%= p.select :card_expiry_month, options_for_select(Payment.month_options), { include_blank: 'Month' }, data: { stripe: 'exp-month' }, class: 'form-control', required: true %>
-      </div>
-      <div class="form-group col-md-3">
-        <%= p.label :card_expiry_year, 'Card expiry year', data: { stripe: 'label' } %>
-        <%= p.select :card_expiry_year, options_for_select(Payment.year_options), { include_blank: 'Year' }, data: { stripe: 'exp-year' }, class: 'form-control', required: true %>
-      </div>
-    </div>
-  <% end %>
-
   <div class="form-group">
     <%= f.submit t('.sign_up'), class: 'btn btn-primary' %>
   </div>
