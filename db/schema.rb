@@ -10,7 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200729114533) do
+ActiveRecord::Schema.define(version: 20200801155333) do
+
+  create_table "orders", force: :cascade do |t|
+    t.integer "product_id"
+    t.integer "user_id"
+    t.integer "status", default: 0
+    t.string "token"
+    t.string "charge_id"
+    t.string "error_message"
+    t.string "costumer_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "price_cents", default: 0, null: false
+    t.index ["product_id"], name: "index_orders_on_product_id"
+    t.index ["user_id"], name: "index_orders_on_user_id"
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.string "name"
+    t.string "stripe_plan_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "price_cents", default: 0, null: false
+    t.string "price_currency", default: "USD", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false

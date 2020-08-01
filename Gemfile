@@ -37,7 +37,8 @@ gem 'jquery-rails'
 # devise authentication framework
 gem 'devise'
 gem 'devise-bootstrap-views', '~> 1.0'
-
+# gem for displaying formatted money values
+gem 'money-rails'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
