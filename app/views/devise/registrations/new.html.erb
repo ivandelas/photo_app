@@ -1,10 +1,8 @@
-<script language="javascript">
-  Stripe.setPublishableKey('<%= ENV['STRIPE_TEST_PUBLISHABLE_KEY'] %>%');
-</script>
+<%= stripe_javascript_tag %>
 
 <h1><%= t('.sign_up') %></h1>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { role: 'form', class: 'cc_form' }) do |f| %>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { role: 'form', id: 'registration-form' }) do |f| %>
   <%= bootstrap_devise_error_messages! %>
 
   <div class="form-group">
@@ -26,9 +24,56 @@
     <%= f.password_field :password_confirmation, autocomplete: 'current-password', class: 'form-control' %>
   </div>
 
+  <div id="payment-stripe" class="form-group border my-4 p-3">
+    <h4 class="mb-4">Payment details</h4>
+    <div id="card-element"></div>
+    <div id="card-errors" role="alert"></div>
+  </div>
+
   <div class="form-group">
-    <%= f.submit t('.sign_up'), class: 'btn btn-primary' %>
+    <%= f.submit t('.sign_up'), class: 'btn btn-primary', id: 'registration-new-submit' %>
   </div>
 <% end %>
 
 <%= render 'devise/shared/links' %>
+
+<script type="text/javascript">
+  // initialize stripe with publishable key
+  var stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
+  // create stripe credit card elements
+  var elements = stripe.elements();
+  var card = elements.create('card');
+  // add a listener in order to check if
+  card.addEventListener('change', function(event) {
+    // the div card-errors contains error details if any
+    var displayError = document.getElementById('card-errors');
+    document.getElementById('registration-new-submit').disabled = false;
+    if (event.error) {
+      // display the error
+      displayError.textContent = event.error.message;
+    } else {
+      // clear error
+      displayError.textContent = '';
+    }
+  });
+  // mount stripe card element in the #card-element div
+  card.mount('#card-element');
+  var form = document.getElementById('registration-form');
+  // this will be called when the #registration-new-submit button is clicked by the user
+  form.addEventListener('submit', function(event) {
+    $('#registration-new-submit').prop('disabled', true);
+    event.preventDefault();
+    stripe.createToken(card).then(function(result) {
+      if (result.error) {
+        // inform that there was an error
+        var errorElement = document.getElementById('card-errors');
+        errorElement.textContent = result.error.message;
+      } else {
+        // now we submit the form and add a hidden input storing the token. So our back-end can consume it.
+        $(form).append($('<input type="hidden" name="orders[token]"/>').val(result.token.id));
+        $(form).submit();
+      }
+    });
+    return false;
+  })
+</script>

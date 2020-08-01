@@ -39,6 +39,8 @@ gem 'devise'
 gem 'devise-bootstrap-views', '~> 1.0'
 # gem for displaying formatted money values
 gem 'money-rails'
+# stripe for payments
+gem 'stripe-rails'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
