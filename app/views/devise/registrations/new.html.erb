@@ -30,7 +30,7 @@
     <div id="card-errors" role="alert"></div>
   </div>
 
-  <input type="hidden" value="<%= @product.id %>" name="orders[:product_id]" id="orders_product_id" />
+  <input type="hidden" value="<%= @product.id %>" name="orders[product_id]" id="orders_product_id" />
 
   <div class="form-group">
     <%= f.submit t('.sign_up'), class: 'btn btn-primary', id: 'registration-new-submit' %>
@@ -42,14 +42,17 @@
 <script type="text/javascript">
   // initialize stripe with publishable key
   var stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
+
   // create stripe credit card elements
   var elements = stripe.elements();
   var card = elements.create('card');
+
   // add a listener in order to check if
   card.addEventListener('change', function(event) {
     // the div card-errors contains error details if any
     var displayError = document.getElementById('card-errors');
     document.getElementById('registration-new-submit').disabled = false;
+
     if (event.error) {
       // display the error
       displayError.textContent = event.error.message;
@@ -58,13 +61,16 @@
       displayError.textContent = '';
     }
   });
+
   // mount stripe card element in the #card-element div
   card.mount('#card-element');
   var form = document.getElementById('registration-form');
+
   // this will be called when the #registration-new-submit button is clicked by the user
   form.addEventListener('submit', function(event) {
     $('#registration-new-submit').prop('disabled', true);
     event.preventDefault();
+
     stripe.createToken(card).then(function(result) {
       if (result.error) {
         // inform that there was an error
@@ -76,6 +82,7 @@
         $(form).submit();
       }
     });
+
     return false;
   })
 </script>

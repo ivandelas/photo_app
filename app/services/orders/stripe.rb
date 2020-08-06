@@ -1,6 +1,7 @@
 class Orders::Stripe
   INVALID_STRIPE_OPERATION = 'Invalid Stripe Operation'
-  def self.execute(order:)
+
+  def self.execute(order:, user:)
     begin
       product = order.product
       # check if the order is a plan
@@ -13,6 +14,7 @@ class Orders::Stripe
       else
         # subscription will be handled here
       end
+
       unless charge&.id.blank?
         # if there is a charge with id, set the order to be paid
         order.charge_id = charge.id

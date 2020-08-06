@@ -13,16 +13,18 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     build_resource(sign_up_params)
+    @product = Product.find(order_params[:product_id])
 
     resource.save
     yield resource if block_given?
+
     if resource.persisted?
-      @product = Product.find(order_params[:product_id])
-      @order = Order.new(order_params[:token])
+      @order = Order.new(token: order_params[:token])
       @order.user = resource
       @order.product = @product
       @order.price_cents = @product.price_cents
       Orders::Stripe.execute(order: @order, user: resource)
+
       if @order&.save
         if @order.paid?
           # append success message to the flash
@@ -45,6 +47,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
         set_minimum_password_length
         respond_with resource
       end
+
       if resource.active_for_authentication?
         set_flash_message! :notice, :signed_up
         sign_up(resource_name, resource)
