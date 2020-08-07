@@ -41,6 +41,10 @@ gem 'devise-bootstrap-views', '~> 1.0'
 gem 'money-rails'
 # stripe for payments
 gem 'stripe-rails'
+# images uploader
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'fog'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
