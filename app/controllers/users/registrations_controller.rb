@@ -6,7 +6,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # GET /resource/sign_up
   def new
-    @product = Product.first
+    @product = Product.find(params[:product_id])
     super
   end
 

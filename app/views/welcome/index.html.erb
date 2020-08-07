@@ -28,7 +28,7 @@
           <li>Access anywhere</li>
         </ul>
         <div class="d-flex justify-content-end mt-4">
-          <%= link_to 'Sign up', new_user_registration_path, class: 'btn btn-primary' %>
+          <%= link_to 'Sign up', new_user_registration_path(product_id: @premium.id), class: 'btn btn-primary' %>
         </div>
       </div>
     </div>
@@ -43,7 +43,7 @@
           <li>Unlimited projects</li>
         </ul>
         <div class="d-flex justify-content-end mt-4">
-          <%= link_to 'Sign up', new_user_registration_path, class: 'btn btn-primary' %>
+          <%= link_to 'Sign up', new_user_registration_path(product_id: @amaze.id), class: 'btn btn-primary' %>
         </div>
       </div>
     </div>
