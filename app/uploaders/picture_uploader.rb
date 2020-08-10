@@ -9,17 +9,6 @@ class PictureUploader < CarrierWave::Uploader::Base
   # Choose what kind of storage to use for this uploader:
   if Rails.env.production?
     storage :fog
-
-    fog_credentials = {
-      provider: 'DigitalOcean',
-      aws_access_key_id: ENV['AWS_ACCESS_KEY'],
-      aws_secret_access_key: ENV['AWS_SECRET_KEY'],
-      region: 'ams3',
-      endpoint: 'ams3.digitaloceanspaces.com'
-    }
-
-    fog_directory = 'srodrig-photo-app'
-    fog_attributes = { 'Cache-Control' => 'max-age=315576000' }
   else
     storage :file
   end
