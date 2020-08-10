@@ -43,6 +43,8 @@ gem 'stripe-rails'
 # images uploader
 gem 'carrierwave'
 gem 'mini_magick'
+# for storing images with digital ocean aws buckets
+gem 'fog-aws'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -68,8 +70,6 @@ end
 
 group :production do
   gem 'pg'
-  # for storing images with digital ocean
-  gem 'fog-digitalocean'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

@@ -90,16 +90,16 @@ GEM
     excon (0.76.0)
     execjs (2.7.0)
     ffi (1.13.1)
+    fog-aws (3.6.6)
+      fog-core (~> 2.1)
+      fog-json (~> 1.1)
+      fog-xml (~> 0.1)
+      ipaddress (~> 0.8)
     fog-core (2.2.0)
       builder
       excon (~> 0.71)
       formatador (~> 0.2)
       mime-types
-    fog-digitalocean (0.4.0)
-      fog-core
-      fog-json
-      fog-xml
-      ipaddress (>= 0.5)
     fog-json (1.2.0)
       fog-core
       multi_json (~> 1.10)
@@ -268,7 +268,7 @@ DEPENDENCIES
   devise
   devise-bootstrap-views (~> 1.0)
   dotenv-rails
-  fog-digitalocean
+  fog-aws
   jbuilder (~> 2.5)
   jquery-rails
   listen (>= 3.0.5, < 3.2)
