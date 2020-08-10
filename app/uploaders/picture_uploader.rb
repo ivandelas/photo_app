@@ -1,12 +1,28 @@
 class PictureUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
   process resize_to_limit: [150, 150]
+
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
-  storage :file
+  if Rails.env.production?
+    storage :fog
+
+    fog_credentials = {
+      provider: 'AWS',
+      aws_access_key_id: ENV['AWS_ACCESS_KEY'],
+      aws_secret_access_key: ENV['AWS_SECRET_KEY'],
+      region: 'ams3.digitaloceanspaces.com',
+      endpoint: 'https://.digitaloceanspaces.com'
+    }
+
+    fog_directory = 'srodrig-photo-app'
+    fog_attributes = { 'Cache-Control' => 'max-age=315576000' }
+  else
+    storage :file
+  end
   # storage :fog
 
   # Override the directory where uploaded files will be stored.

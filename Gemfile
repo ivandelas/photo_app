@@ -5,7 +5,6 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.6'
 # Use Puma as the app server
@@ -44,7 +43,6 @@ gem 'stripe-rails'
 # images uploader
 gem 'carrierwave'
 gem 'mini_magick'
-gem 'fog'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -70,6 +68,8 @@ end
 
 group :production do
   gem 'pg'
+  # for storing images with digital ocean
+  gem 'fog-digitalocean'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

@@ -24,3 +24,8 @@
 
 # vs code debug file
 .vscode/
+
+# vim backup files
+*.swp
+*.swo
+
