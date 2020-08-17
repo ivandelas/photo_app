@@ -4,8 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :validatable
 
-  has_many :orders
-  has_many :images
+  has_many :orders, dependent: :destroy
+  has_many :images, dependent: :destroy
 
   def email_username
     self.email.split('@').first
