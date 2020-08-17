@@ -4,5 +4,9 @@ class WelcomeController < ApplicationController
   def index
     @premium = Product.find_by(name: 'Premium')
     @amaze = Product.find_by(name: 'Amaze')
+
+    if user_signed_in?
+      @images = current_user.images
+    end
   end
 end

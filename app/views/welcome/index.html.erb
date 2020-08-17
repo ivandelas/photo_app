@@ -1,5 +1,11 @@
 <% if user_signed_in? %>
-  <h1 class="display-4 overflow-auto">Welcome <%= current_user.email_username %>!</h1>
+  <div class="row">
+    <% if @images.empty? %>
+      <%# render an alert message %>
+    <% else %>
+      <%= render @images %>
+    <% end %>
+  </div>
 <% else %>
   <div class="row">
     <div class="col-12">

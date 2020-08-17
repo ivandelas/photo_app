@@ -38,9 +38,9 @@ module ApplicationHelper
     if user_signed_in?
       %{
         <aside class="col-lg-4 border shadow p-4 mt-lg-0 mt-4">
-          <%= render 'layouts/sidebar' %>
+          #{render 'layouts/sidebar'}
         </aside>
-      }
+      }.html_safe
     else
       nil
     end
