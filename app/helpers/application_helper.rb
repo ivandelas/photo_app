@@ -33,4 +33,24 @@ module ApplicationHelper
       }.html_safe
     end
   end
+
+  def render_account_sidebar
+    if user_signed_in?
+      %{
+        <aside class="col-lg-4 border shadow p-4 mt-lg-0 mt-4">
+          <%= render 'layouts/sidebar' %>
+        </aside>
+      }
+    else
+      nil
+    end
+  end
+
+  def render_content_class
+    if user_signed_in?
+      'col-lg-8 px-lg-5'
+    else
+      'col-lg-12'
+    end
+  end
 end

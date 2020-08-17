@@ -15,7 +15,7 @@
     <%= render 'layouts/navigation' %>
     <div class="container my-5">
       <div class="row">
-        <div class="col-lg-8 px-lg-5">
+        <div class="<%= render_content_class %>%">
           <div>
             <div id="messages">
               <%= render 'layouts/messages' %>
@@ -25,9 +25,7 @@
             </main>
           </div>
         </div>
-        <aside class="col-lg-4 border shadow p-4 mt-lg-0 mt-4">
-          <%= render 'layouts/sidebar' %>
-        </aside>
+        <%= render_account_sidebar %>
       </div>
     </div>
     <%= render 'layouts/footer' %>

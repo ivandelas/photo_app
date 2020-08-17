@@ -1,10 +1,19 @@
-<h2>Sidebar</h2>
+<h2>Account</h2>
+<section>
+  <h4>Details</h4>
+  <dl>
+    <dt>Email</dt>
+    <dd><%= current_user.email %></dd>
+    <dt>Images uploaded</dt>
+    <dd><%= current_user.images.count %></dd>
+    <dt>Subscriptions</dt>
+    <dd><%= current_user.orders.last.product.name %></dd>
+  </dl>
+</section>
 <section class="mt-3">
-  <h4>Sub-section</h4>
-  <div class="list-group">
-    <a href="#" class="list-group-item list-group-item-action active">Link</a>
-    <a href="#" class="list-group-item list-group-item-action">Link</a>
-    <a href="#" class="list-group-item list-group-item-action">Link</a>
-    <a href="#" class="list-group-item list-group-item-action">Link</a>
+  <h4>Actions</h4>
+  <div class="btn-group" role="group" aria-label="User account actions">
+    <%= link_to 'Edit account details', edit_user_path(current_user), class: 'btn btn-secondary' %>
+    <%= link_to 'Cancel account', current_user, method: :delete, class: 'btn btn-danger' %>
   </div>
 </section>
