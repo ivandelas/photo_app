@@ -48,7 +48,7 @@ module ApplicationHelper
 
   def render_content_class
     if user_signed_in?
-      'col-lg-8 px-lg-5'
+      'col-lg-8'
     else
       'col-lg-12'
     end

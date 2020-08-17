@@ -6,7 +6,7 @@ class WelcomeController < ApplicationController
     @amaze = Product.find_by(name: 'Amaze')
 
     if user_signed_in?
-      @images = current_user.images
+      @images = Image.all
     end
   end
 end

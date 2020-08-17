@@ -1,7 +1,9 @@
 <% if user_signed_in? %>
   <div class="row">
     <% if @images.empty? %>
-      <%# render an alert message %>
+      <div class="alert alert-secondary" role="alert">
+        Currently, there are no images to display.
+      </div>
     <% else %>
       <%= render @images %>
     <% end %>
