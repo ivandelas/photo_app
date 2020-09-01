@@ -37,7 +37,7 @@ module ApplicationHelper
   def render_account_sidebar
     if user_signed_in?
       %{
-        <aside class="col-md-4 border shadow p-4 mt-lg-0 offset-md-1 mt-4">
+        <aside class="col-md-4 border shadow p-4 mt-lg-0 offset-md-1 mt-4" id="main-aside">
           #{render 'layouts/sidebar'}
         </aside>
       }.html_safe
