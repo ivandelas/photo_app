@@ -5,7 +5,7 @@ class ImagesController < ApplicationController
   # GET /images
   # GET /images.json
   def index
-    @images = Image.all
+    redirect_to root_url
   end
 
   # GET /images/1
