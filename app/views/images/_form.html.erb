@@ -1,6 +1,6 @@
 <%= form_with(model: image, local: true, multipart: true) do |form| %>
   <% if image.errors.any? %>
-    <div id="error_explanation">
+    <div id="error_explanation" class="alert alert-danger">
       <h2><%= pluralize(image.errors.count, "error") %> prohibited this image from being saved:</h2>
 
       <ul>
@@ -11,18 +11,17 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :name %>
-    <%= form.text_field :name, id: :image_name %>
+    <%= form.text_field :name, id: :image_name, class: 'form-control' %>
   </div>
 
-  <div class="field">
-    <%= form.label :picture %>
+  <div class="field form-group">
     <%= form.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="actions form-group">
+    <%= form.submit 'Create', class: 'btn btn-success' %>
   </div>
 <% end %>
 
