@@ -1,13 +1,13 @@
 <!-- place all the badges here -->
 ![release badge](https://img.shields.io/github/v/release/santiago-rodrig/photo_app)
-![website state badge](https://img.shields.io/website?down_color=lightgrey&down_message=offline&up_color=green&up_message=online&url=https%3A%2F%2Fsrodrig-photo_app.herokuapp.com)
+![website state badge](https://img.shields.io/website?down_color=lightgrey&down_message=offline&up_color=green&up_message=online&url=https%3A%2F%2Fsrodrig-photo-app.herokuapp.com)
 ![license badge](https://img.shields.io/github/license/santiago-rodrig/photo_app)
 ![followers](https://img.shields.io/github/followers/santiago-rodrig?style=social)
 ![stars](https://img.shields.io/github/stars/santiago-rodrig/photo_app?style=social)
 
 # Photo App
 
-[live version](https://srodrig-photo_app.herokuapp.com)
+[live version](https://srodrig-photo-app.herokuapp.com)
 
 This project is part of the [The Complete Ruby on Rails Developer Course](https://www.udemy.com/course/the-complete-ruby-on-rails-developer-course/)
 and it is about uploading pictures and making payments for subscription plans. The idea is this, to register you need to choose a
