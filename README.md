@@ -5,7 +5,7 @@
 ![followers](https://img.shields.io/github/followers/santiago-rodrig?style=social)
 ![stars](https://img.shields.io/github/stars/santiago-rodrig/photo_app?style=social)
 
-# Project title
+# Photo App
 
 [live version](https://srodrig-photo_app.herokuapp.com)
 
