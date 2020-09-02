@@ -1,14 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>PhotoApp</title>
+    <title>Photo App</title>
     <%= csrf_meta_tags %>
 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'https://js.stripe.com/v3/'%>
   </head>
 
   <body>
-    <%= yield %>
+    <%= render 'layouts/navigation' %>
+    <div class="container my-5">
+      <div class="row">
+        <div class="<%= render_content_class %>">
+          <div>
+            <div id="messages">
+              <%= render 'layouts/messages' %>
+            </div>
+            <main>
+              <%= yield %>
+            </main>
+          </div>
+        </div>
+        <%= render_account_sidebar %>
+      </div>
+    </div>
+    <%= render 'layouts/footer' %>
   </body>
 </html>

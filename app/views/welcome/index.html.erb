@@ -1,0 +1,59 @@
+<% if user_signed_in? %>
+  <div class="row">
+    <% if @images.empty? %>
+      <div class="alert alert-secondary" role="alert">
+        Currently, there are no images to display.
+      </div>
+    <% else %>
+      <%= render @images %>
+    <% end %>
+  </div>
+<% else %>
+  <div class="row">
+    <div class="col-12">
+      <div class="jumbotron" id="welcome-jumbo">
+        <div id="welcome-jumbo-content">
+          <h1 class="display-4 text-light">Welcome to Photo App!</h1>
+          <p class="lead text-light">
+          You'll love managing your photos with our application. Sign up!
+          </p>
+          <small class="text-muted">
+          Photo by
+          <a href="https://unsplash.com/@sctgrhm?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Scott Graham</a>
+          on
+          <a href="https://unsplash.com/s/photos/meeting?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a>
+          </small>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 mb-4 mb-md-0">
+      <div class="border shadow p-3">
+        <h2 class="text-center mb-4">Premium Plan</h2>
+        <ul>
+          <li>Unlimited image uploads</li>
+          <li>Just $10</li>
+          <li>Responsive design</li>
+          <li>Access anywhere</li>
+        </ul>
+        <div class="d-flex justify-content-end mt-4">
+          <%= link_to 'Sign up', new_user_registration_path(product_id: @premium.id), class: 'btn btn-primary' %>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="border shadow p-3">
+        <h2 class="text-center mb-4">Amaze Plan</h2>
+        <ul>
+          <li>Unlimited image uploads</li>
+          <li>Just $20</li>
+          <li>Responsive design</li>
+          <li>Access anywhere</li>
+          <li>Unlimited projects</li>
+        </ul>
+        <div class="d-flex justify-content-end mt-4">
+          <%= link_to 'Sign up', new_user_registration_path(product_id: @amaze.id), class: 'btn btn-primary' %>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>

@@ -1,0 +1,20 @@
+<div class="border shadow p-3">
+  <div class="row">
+    <div class="col-4">
+      <div>
+        <%= image_tag @image.picture.url, class: 'img-thumbnail' %>
+      </div>
+    </div>
+    <div class="col-8">
+      <div class="mt-2">
+        <h3 class="text-center"><%= @image.name %></h3>
+        <dl class="border p-2 mt-3">
+          <dt>Author</dt>
+          <dd><%= @image.user.email_username %></dd>
+          <dt>Time of creation</dt>
+          <dd><%= time_ago_in_words(@image.created_at) %> ago</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</div>

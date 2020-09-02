@@ -1,0 +1,5 @@
+<% if notice %>
+  <%= render_message(:notice, notice) %>
+<% elsif alert %>
+  <%= render_message(:alert, alert) %>
+<% end %>
