@@ -1,13 +1,13 @@
 <!-- place all the badges here -->
-![release badge](https://img.shields.io/github/v/release/santiago-rodrig/photo-app)
-![website state badge](https://img.shields.io/website?down_color=lightgrey&down_message=offline&up_color=green&up_message=online&url=https%3A%2F%2Fsrodrig-photo-app.herokuapp.com)
-![license badge](https://img.shields.io/github/license/santiago-rodrig/photo-app)
+![release badge](https://img.shields.io/github/v/release/santiago-rodrig/photo_app)
+![website state badge](https://img.shields.io/website?down_color=lightgrey&down_message=offline&up_color=green&up_message=online&url=https%3A%2F%2Fsrodrig-photo_app.herokuapp.com)
+![license badge](https://img.shields.io/github/license/santiago-rodrig/photo_app)
 ![followers](https://img.shields.io/github/followers/santiago-rodrig?style=social)
-![stars](https://img.shields.io/github/stars/santiago-rodrig/photo-app?style=social)
+![stars](https://img.shields.io/github/stars/santiago-rodrig/photo_app?style=social)
 
 # Project title
 
-[live version](https://srodrig-photo-app.herokuapp.com)
+[live version](https://srodrig-photo_app.herokuapp.com)
 
 This project is part of the [The Complete Ruby on Rails Developer Course](https://www.udemy.com/course/the-complete-ruby-on-rails-developer-course/)
 and it is about uploading pictures and making payments for subscription plans. The idea is this, to register you need to choose a
@@ -16,11 +16,11 @@ the payments so you can search their documentation to get some test credit card 
 
 ## Table of contents
 
-- [Requirements](https://github.com/santiago-rodrig/photo-app#requirements)
-- [Setup](https://github.com/santiago-rodrig/photo-app#setup)
-- [Collaboration](https://github.com/santiago-rodrig/photo-app#collaboration)
-- [License](https://github.com/santiago-rodrig/photo-app#license)
-- [Contact](https://github.com/santiago-rodrig/photo-app#contact)
+- [Requirements](https://github.com/santiago-rodrig/photo_app#requirements)
+- [Setup](https://github.com/santiago-rodrig/photo_app#setup)
+- [Collaboration](https://github.com/santiago-rodrig/photo_app#collaboration)
+- [License](https://github.com/santiago-rodrig/photo_app#license)
+- [Contact](https://github.com/santiago-rodrig/photo_app#contact)
 
 ## Requirements
 
@@ -33,7 +33,7 @@ the payments so you can search their documentation to get some test credit card 
 First, clone this repository.
 
 ```sh
-git clone https://github.com/santiago-rodrig/photo-app.git
+git clone https://github.com/santiago-rodrig/photo_app.git
 ```
 
 Install the required dependencies.
@@ -58,11 +58,13 @@ Visit [localhost at port 3000](http://localhost:3000) and see the app runnning.
 
 ## Collaboration
 
-To collaborate to this project first fork the repository, after that, create a new branch based
-on [develop](https://github.com/santiago-rodrig/photo-app/tree/develop)
+To collaborate to this project first fork the repository, after that, create a
+new branch based on
+[develop](https://github.com/santiago-rodrig/photo_app/tree/develop)
 (using [Git-flow](https://nvie.com/posts/a-successful-git-branching-model/)
-is recommended), push your branch to your forked repository and create a PR (Pull Request)
-from your branch to the develop branch of the original repository.
+is recommended), push your branch to your forked repository and create a PR
+(Pull Request) from your branch to the develop branch of the original
+repository.
 
 ## License
 
